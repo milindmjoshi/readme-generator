@@ -1,6 +1,34 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+const readmeTemplate = ({ title, description, usage, installation,test, license, githubName, email }) => 
+
+`
+# ${title}
+
+## Description
+${description}
+
+![Screenshot](./assets/images/05-demo.png)
+
+## Usage
+${usage}
+
+## Installation
+${installation}
+
+## Test Instructions
+${test}
+
+## Contact Info
+Github User Name: ${githubName}
+Email: ${email}
+ 
+## License
+${license}
+    
+`;
+
 inquirer.prompt([
     {
         type: 'input',
@@ -55,5 +83,14 @@ inquirer.prompt([
         message: 'Please enter your email',
     }
 ]).then((response)=>{
-    console.log(response);
+   // console.log(response);
+    createReadme(response);
 })
+
+function createReadme(response){
+    const readmeFileText = readmeTemplate(response);
+    console.log(readmeFileText);
+    fs.writeFile("MYREADME.md",readmeFileText,(err)=>{
+        err? console.log(err):console.log("Readme created!");
+    });
+}
