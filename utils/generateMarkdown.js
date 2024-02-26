@@ -97,5 +97,5 @@ ${renderLicenseSection(license)}
     
 `;
 
-// export the generateMarkdown function
+// export the generateMarkdown functione 
 module.exports = generateMarkdown;
