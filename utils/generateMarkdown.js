@@ -29,16 +29,16 @@ function renderLicenseLink(license) {
   let licenseLink;
   switch(license){
     case 'Apache':
-      licenseLink = "[License](https://opensource.org/licenses/Apache-2.0)";
+      licenseLink = "[Apache](https://opensource.org/licenses/Apache-2.0)";
       break;
     case 'GNU':
-      licenseLink = "[License](https://www.gnu.org/licenses/gpl-3.0)";
+      licenseLink = "[GNU](https://www.gnu.org/licenses/gpl-3.0)";
       break;
     case 'MIT':
-      licenseLink = "[License](https://opensource.org/licenses/MIT)";
+      licenseLink = "[MIT](https://opensource.org/licenses/MIT)";
       break;
     case 'Mozilla':
-      licenseLink = "[License](https://opensource.org/licenses/MPL-2.0)";
+      licenseLink = "[Mozilla](https://opensource.org/licenses/MPL-2.0)";
       break;
     default:
       licenseLink = "";
@@ -69,8 +69,8 @@ ${renderLicenseBadge(license)}
 * [Description](#description)
 * [Usage](#usage)
 * [Installation](#installation)
-* [Test Instructions](#test-instructions)
-* [Contributing](#contribution)
+* [Tests](#tests)
+* [Contributing](#contributing)
 * [Questions](#questions)
 * [License](#license)
 
@@ -90,7 +90,7 @@ ${test}
 ${contribution}
 
 ## Questions
-Github : [Profile](https://github.com/${githubName})
+Github : [Profile](https://github.com/${githubName})\n
 Email: [${email}](mailto:${email})
  
 ${renderLicenseSection(license)}
