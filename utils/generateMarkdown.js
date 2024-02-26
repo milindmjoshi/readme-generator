@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Render a string for the license badge. If there is no license, return an empty string
 function renderLicenseBadge(license) {
   console.log("render badge, license: " + license);
   let licenseBadge;
@@ -24,8 +23,7 @@ function renderLicenseBadge(license) {
   return licenseBadge;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Render a link to the license file. If there is no license, return an empty string
 function renderLicenseLink(license) {
   console.log("render link, license: " + license);
   let licenseLink;
@@ -50,8 +48,7 @@ function renderLicenseLink(license) {
   return licenseLink;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Render the license section of README. If there is no license selected, return an empty string
 function renderLicenseSection(license) {
    if (license.trim() == 'NONE'){
      return '';
@@ -62,17 +59,18 @@ function renderLicenseSection(license) {
 }
 
 
-//export function generateMarkdown ({ title, description, usage, installation,test, license, githubName, email }) { return
-const generateMarkdown = ({ title, description, usage, installation,test, license, githubName, email }) => 
+// Generate the Markdown file from the response using string template
+const generateMarkdown = ({ title, description, usage, installation,test, license, githubName, email, contribution }) => 
 `
 ${renderLicenseBadge(license)}
 # ${title}
 
-## Contents
+## Table of Contents
 * [Description](#description)
 * [Usage](#usage)
 * [Installation](#installation)
 * [Test Instructions](#test-instructions)
+* [Contributing](#contribution)
 * [Questions](#questions)
 * [License](#license)
 
@@ -85,8 +83,11 @@ ${usage}
 ## Installation
 ${installation}
 
-## Test Instructions
+## Tests
 ${test}
+
+## Contributing
+${contribution}
 
 ## Questions
 Github : [Profile](https://github.com/${githubName})
@@ -96,4 +97,5 @@ ${renderLicenseSection(license)}
     
 `;
 
+// export the generateMarkdown function
 module.exports = generateMarkdown;

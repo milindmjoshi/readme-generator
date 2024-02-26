@@ -1,8 +1,11 @@
+// import Node FS module
 const fs = require('fs');
+// import the inquirer package
 const inquirer = require('inquirer');
+// import the generateMarkdown function
 const generateMarkdown = require('./utils/generateMarkdown');
 
-
+// Prompt user for sections in readme file
 inquirer.prompt([
     {
         type: 'input',
@@ -61,10 +64,11 @@ inquirer.prompt([
     createReadme(response);
 })
 
+// Creates README file from responses
 function createReadme(response) {
     const readmeFileText = generateMarkdown(response);
     console.log(readmeFileText);
-    fs.writeFile("MYREADME.md", readmeFileText, (err) => {
+    fs.writeFile("README.md", readmeFileText, (err) => {
         err ? console.log(err) : console.log("Readme created!");
     });
 
