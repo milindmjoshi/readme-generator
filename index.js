@@ -1,33 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-const readmeTemplate = ({ title, description, usage, installation,test, license, githubName, email }) => 
-
-`
-# ${title}
-
-## Description
-${description}
-
-![Screenshot](./assets/images/05-demo.png)
-
-## Usage
-${usage}
-
-## Installation
-${installation}
-
-## Test Instructions
-${test}
-
-## Contact Info
-Github User Name: ${githubName}
-Email: ${email}
- 
-## License
-${license}
-    
-`;
 
 inquirer.prompt([
     {
@@ -69,7 +43,7 @@ inquirer.prompt([
         type: 'list',
         name: 'license',
         message: 'Please select a license',
-        choices: ['MIT','APACHE 2.0', 'GNU', 'Public Domain'],
+        choices: ['MIT', 'APACHE 2.0', 'GNU', 'Mozilla', 'NONE'],
         default: 0
     },
     {
@@ -82,15 +56,16 @@ inquirer.prompt([
         name: 'email',
         message: 'Please enter your email',
     }
-]).then((response)=>{
-   // console.log(response);
+]).then((response) => {
+    // console.log(response);
     createReadme(response);
 })
 
-function createReadme(response){
-    const readmeFileText = readmeTemplate(response);
+function createReadme(response) {
+    const readmeFileText = generateMarkdown(response);
     console.log(readmeFileText);
-    fs.writeFile("MYREADME.md",readmeFileText,(err)=>{
-        err? console.log(err):console.log("Readme created!");
+    fs.writeFile("MYREADME.md", readmeFileText, (err) => {
+        err ? console.log(err) : console.log("Readme created!");
     });
+
 }
