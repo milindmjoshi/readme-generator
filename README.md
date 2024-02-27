@@ -17,6 +17,9 @@ Creates a professional README file from user prompts
 ## Usage
 Run "node index.js"
 
+## Video Link 
+https://drive.google.com/file/d/1oILTKDCQo5FA-MvnbfXExBaeE8WyvGLi/view
+
 ## Installation
 N/A
 
