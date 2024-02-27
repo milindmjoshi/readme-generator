@@ -1,5 +1,5 @@
 
-![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)
+
 # README generator
 
 ## Table of Contents
@@ -12,7 +12,7 @@
 * [License](#license)
 
 ## Description
-Application to generate a professional README file from user input
+Creates a professional readme file from user prompts
 
 ## Usage
 Run "node index.js"
@@ -32,5 +32,5 @@ Github : [Profile](https://github.com/milindmjoshi)
 Email: [milindmjoshi@gmail.com](mailto:milindmjoshi@gmail.com)
  
 ## License
-[Mozilla](https://opensource.org/licenses/MPL-2.0)
+
     
