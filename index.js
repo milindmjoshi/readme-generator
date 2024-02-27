@@ -46,7 +46,7 @@ inquirer.prompt([
         type: 'list',
         name: 'license',
         message: 'Please select a license',
-        choices: ['MIT', 'APACHE 2.0', 'GNU', 'Mozilla', 'NONE'],
+        choices: ['MIT', 'Apache', 'GNU', 'Mozilla', 'NONE'],
         default: 0
     },
     {
